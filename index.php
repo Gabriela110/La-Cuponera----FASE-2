@@ -34,10 +34,15 @@ $result = $conn->query($sql);
             echo "<p><strong>Empresa:</strong> " . $row['nombre_empresa'] . "</p>";
             echo "<p><strong>Precio de oferta:</strong> $" . $row['precio_oferta'] . "</p>";
             echo "<p>" . $row['descripcion'] . "</p>";
+
+            // 🔥 BOTÓN PARA VER LA OFERTA COMPLETA
+            echo "<a href='ver_oferta.php?id=" . $row['id_oferta'] . "'>";
+            echo "<button>Ver oferta</button>";
+            echo "</a>";
+
             echo "</div>";
         }
     } 
-    
     else 
     {
         echo "<p>No hay ofertas disponibles por el momento.</p>";

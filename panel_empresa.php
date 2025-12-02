@@ -2,7 +2,7 @@
 session_start();
 include 'db.php';
 
-// PROTECCIÓN: solo empresas pueden entrar
+//solo empresas pueden entrar
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'empresa') {
     header("Location: login.php");
     exit();
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cantidad = $_POST['cantidad'];
     $descripcion = $_POST['descripcion'];
 
-    // Inserción
+   
     $sql = "INSERT INTO ofertas 
             (id_empresa, titulo, precio_regular, precio_oferta, fecha_inicio, fecha_fin, fecha_limite_canje, cantidad_cupones, descripcion)
             VALUES 
